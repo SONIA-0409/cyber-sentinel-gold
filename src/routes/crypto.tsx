@@ -44,7 +44,7 @@ function md5(str: string) {
   function f(G: number, k: number, aa: number, s: number, F: number, B: number, x: number) { G = K(G, K(K(q(k, aa, s), F), x)); return K(L(G, B), k); }
   function D(G: number, k: number, aa: number, s: number, F: number, B: number, x: number) { G = K(G, K(K(p(k, aa, s), F), x)); return K(L(G, B), k); }
   function t(G: number, k: number, aa: number, s: number, F: number, B: number, x: number) { G = K(G, K(K(n(k, aa, s), F), x)); return K(L(G, B), k); }
-  function e(G: number) { let k = "", F = "", B; for (B = 0; B <= 3; B++) { F = (G >>> (B * 8)) & 255; F = "0" + F.toString(16); k = k + F.substr(F.length - 2, 2); } return k; }
+  function e(G: number) { let k = ""; for (let B = 0; B <= 3; B++) { const n = (G >>> (B * 8)) & 255; const s = "0" + n.toString(16); k = k + s.substring(s.length - 2); } return k; }
   function U(k: string) {
     k = k.replace(/\r\n/g, "\n");
     let aa = ""; for (let s = 0; s < k.length; s++) {
